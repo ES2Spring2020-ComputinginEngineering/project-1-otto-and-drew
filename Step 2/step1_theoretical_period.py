@@ -14,3 +14,4 @@ arr1d = np.array(length)
 def period(a):
     t = (a/9.8)**.5
     return t
+
