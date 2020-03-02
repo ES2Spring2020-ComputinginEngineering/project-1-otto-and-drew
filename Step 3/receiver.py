@@ -1,5 +1,7 @@
 ##################
-# FILL IN HEADER
+# Otto and Drew
+# Time: 1 hr
+# We worked alone on this project
 #################
 
 import microbit as mb
@@ -27,9 +29,8 @@ while True:
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
 
         #############################################################
-        # FILL IN HERE
-        # Incoming is string sent from logger
-        # Need to parse it and reformat as a tuple for the MU plotter
+        lis = incoming.split('')
+        print(lis[0], lis[1], lis[2], lis[3])
         #############################################################
 
         mb.sleep(10)
