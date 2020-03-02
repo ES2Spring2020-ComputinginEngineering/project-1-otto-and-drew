@@ -1,6 +1,6 @@
 ##################
 # Drew and Otto
-# Time:
+# Time: 2 hr
 # We worked alone on this project
 #################
 
