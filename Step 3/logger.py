@@ -32,7 +32,7 @@ while not mb.button_a.is_pressed():
     x = mb.accelerometer.get_x()
     y = mb.accelerometer.get_y()
     z = mb.accelerometer.get_z()
-    message = (str(time) + '' + str(x) + '' + str(y) + '' + str(z))
+    message = str(time)+", " + str(x)+ ", " +str(y)+", " +str(z)
     radio.send(message)
     mb.sleep(10)
 
