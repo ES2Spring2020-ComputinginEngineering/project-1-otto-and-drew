@@ -29,8 +29,9 @@ while True:
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
 
         #############################################################
-        lis = incoming.split('')
-        print(lis[0], lis[1], lis[2], lis[3])
+        bc = incoming.split()
+        rc = list(bc)
+        print(rc[0], rc[1], rc[2], rc[3])
         #############################################################
 
         mb.sleep(10)
