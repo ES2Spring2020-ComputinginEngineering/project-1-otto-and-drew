@@ -1,7 +1,7 @@
 # Project1
 Project 1 Starter Code
 
-Names:
+Names: Otto Laakso & Drew Hollett
 Team Name:
 
 Your primary tasks will be to:
