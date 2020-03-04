@@ -1,8 +1,12 @@
 # Step 4: Analysis of Results
 
+import os
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+
+path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
 fin2 = open("receiver_data2.txt", "r")
@@ -11,10 +15,16 @@ fin4 = open("receiver_data4.txt", "r")
 fin5 = open("receiver_data5.txt", "r")
 
 def create_array(fin):
-    array = []
+
     for row in fin:
-        array = np.append(array, row)
-    return array
+        row = row.rstrip("\n")
+        array = row.split(" ")
+        
+        print(row)
+      
+        #array = np.append(array, row)
+    
+    #return array
 
 def new_array(array):
     
@@ -36,3 +46,5 @@ def new_array(array):
     
     new_array = np.array(new_list)
     return new_array
+
+create_array(fin1)
