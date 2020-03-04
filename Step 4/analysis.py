@@ -5,7 +5,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+path = path = "c:/users/drewh/documents/github/project-1-otto-and-drew/Step 3"
 os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
@@ -15,12 +15,12 @@ fin4 = open("receiver_data4.txt", "r")
 fin5 = open("receiver_data5.txt", "r")
 
 def create_array(fin):
-
+    array = []
     for row in fin:
-        row = row.rstrip("\n")
-        array = row.split(" ")
+       row = row.rstrip("\n")
+       array.append(row)
         
-        print(row)
+    print(array)
       
         #array = np.append(array, row)
     
