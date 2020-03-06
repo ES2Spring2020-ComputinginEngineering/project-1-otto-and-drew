@@ -5,7 +5,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+path = "C:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
 os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
@@ -22,13 +22,14 @@ def create_array(name):
     for line in fin:
         line = line.replace("(", "")
         line = line.replace(")", "")
+        print(line)
         fout.write(line)
     fin.close()
     fout.close()
 
-    array = np.loadtxt(outname, delimiter=",", dtype=int)
+    array = np.loadtxt(outname, delimiter=",", dtype=float)
     print(array)
-    t = array[[0][0]]
+    t = array[:,0]
     print(t)
     
 create_array("receiver_data1.txt")
