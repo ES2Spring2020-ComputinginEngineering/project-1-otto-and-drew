@@ -5,7 +5,8 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+#path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
 os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
@@ -27,17 +28,22 @@ def create_array(name):
     fout.close()
 
     array = np.loadtxt(outname, delimiter=",", dtype=float)
+    print(array)
     return array
-      
-def acc_array(array):
-    x = 
-    y = 
-    
-    plt.plot()
-    plt.axis()
+
+def acc_array():
+    t = array[:,0]
+    x = array[:,1]
+    y = array[:,2]
+    z = array[:,3]
+    plt.plot(t, x, 'r--', t, y, 'bs', t, z, 'g^')
+    plt.xlabel('Time')
+    plt.ylabel('Accelerations')
+    plt.axis([0,40000, 0, 4000])
     plt.show()
 
-
+create_array("receiver_data1.txt")
+acc_array()
 # =============================================================================
 # def theta_array(array):
 #     
