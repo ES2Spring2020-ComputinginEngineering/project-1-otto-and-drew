@@ -28,10 +28,9 @@ def create_array(name):
     fout.close()
 
     array = np.loadtxt(outname, delimiter=",", dtype=float)
-    print(array)
     return array
 
-def acc_array():
+def acc_array(array):
     t = array[:,0]
     x = array[:,1]
     y = array[:,2]
@@ -39,11 +38,10 @@ def acc_array():
     plt.plot(t, x, 'r--', t, y, 'bs', t, z, 'g^')
     plt.xlabel('Time')
     plt.ylabel('Accelerations')
-    plt.axis([0,40000, 0, 4000])
+    plt.title('Acceleration vs Time')
+    plt.legend(('X values', 'Y values', 'Z values'))
     plt.show()
 
-create_array("receiver_data1.txt")
-acc_array()
 # =============================================================================
 # def theta_array(array):
 #     
