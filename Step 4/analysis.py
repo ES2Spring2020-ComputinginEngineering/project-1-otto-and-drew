@@ -30,6 +30,12 @@ def create_array(name):
     array = np.loadtxt(outname, delimiter=",", dtype=float)
     return array
 
+s = create_array("receiver_data1.txt")
+p = create_array("receiver_data2.txt")
+q = create_array("receiver_data3.txt")
+r = create_array("receiver_data4.txt")
+t = create_array("receiver_data5.txt")
+
 def acc_array(array):
     t = array[:,0]
     x = array[:,1]
