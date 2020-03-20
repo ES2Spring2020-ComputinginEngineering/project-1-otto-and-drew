@@ -52,7 +52,7 @@ def acc_array(array):
 def theta_array(array):
      
     new_list = []
-    acc_x = array[:.1]
+    acc_x = array[:,1]
     acc_y = array[:,2]
     acc_z = array[:,3]
     tilt_x = (math.atan2(acc_x, math.sqrt((acc_y ** 2) + (acc_z **2))))
