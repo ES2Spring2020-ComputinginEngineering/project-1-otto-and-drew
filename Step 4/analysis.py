@@ -66,12 +66,22 @@ def theta_array(array):
     new_array = np.array(new_list)
     return new_array
 
-    time = new_array[:,0]
-    theta = new_array[:,1]
-    plt.plot(time, theta)
+l = theta_array(s)
+m = theta_array(p)
+n = theta_array(q)
+o = theta_array(r)
+p = theta_array(t)
+
+def theta_graph(new_array):
+    ti = new_array[:,0]
+    th = new_array[:,1]
+    plt.plot(ti, th, 'b.')
     plt.xlabel('Time')
     plt.ylabel('Theta')
     plt.title('Theta vs. Time')
     plt.show()
     
-
+theta_graph(m)
+theta_graph(n)
+theta_graph(o)
+theta_graph(p)
