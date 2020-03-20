@@ -52,16 +52,26 @@ def acc_array(array):
 def theta_array(array):
      
     new_list = []
+    time = array[0:,0]
     acc_x = array[:,1]
     acc_y = array[:,2]
     acc_z = array[:,3]
-    tilt_x = (math.atan2(acc_x, math.sqrt((acc_y ** 2) + (acc_z **2))))
-    tilt_y = (math.atan2(acc_y, math.sqrt((acc_x ** 2) + (acc_z **2))))
-    theta = (math.atan2(tilt_y, tilt_x)*180)/(math.pi)
     
-     
+    for i in range(len(acc_x)):
+        tilt_x = (math.atan2(acc_x[i], math.sqrt((acc_y[i] ** 2) + (acc_z[i] **2))))
+        tilt_y = (math.atan2(acc_y[i], math.sqrt((acc_x[i] ** 2) + (acc_z[i] **2))))
+        theta = (math.atan2(tilt_y, tilt_x)*180)/(math.pi)
+        new_list.append([time[i], theta])
+    
     new_array = np.array(new_list)
     return new_array
 
-
+    time = new_array[:,0]
+    theta = new_array[:,1]
+    plt.plot(time, theta)
+    plt.xlabel('Time')
+    plt.ylabel('Theta')
+    plt.title('Theta vs. Time')
+    plt.show()
+    
 
