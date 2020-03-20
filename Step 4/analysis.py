@@ -48,24 +48,20 @@ def acc_array(array):
     plt.legend(('X values', 'Y values', 'Z values'))
     plt.show()
 
-# =============================================================================
-# def theta_array(array):
-#     
-#     new_list = []
-#    
-#     for row in array:
-#         time_value = array[np.array(0)]
-#         acc_values = array[np.array(1,4)]
-#         acc_x = acc_values[0]
-#         acc_y = acc_values[1]
-#         acc_z = acc_values[2]
-#         tilt_x = (math.atan2(acc_x, math.sqrt((acc_y ** 2) + (acc_z **2))))
-#         tilt_y = (math.atan2(acc_y, math.sqrt((acc_x ** 2) + (acc_z **2))))
-#         theta = (math.atan2(tilt_y, tilt_x)*180)/(math.pi)
-#         new_list = new_list + time_value + theta
-#     
-#     new_array = np.array(new_list)
-#     return new_array
-# =============================================================================
+
+def theta_array(array):
+     
+    new_list = []
+    acc_x = array[:.1]
+    acc_y = array[:,2]
+    acc_z = array[:,3]
+    tilt_x = (math.atan2(acc_x, math.sqrt((acc_y ** 2) + (acc_z **2))))
+    tilt_y = (math.atan2(acc_y, math.sqrt((acc_x ** 2) + (acc_z **2))))
+    theta = (math.atan2(tilt_y, tilt_x)*180)/(math.pi)
+    
+     
+    new_array = np.array(new_list)
+    return new_array
+
 
 
