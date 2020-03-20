@@ -83,14 +83,14 @@ def theta_graph(new_array):
     plt.show()
 
 def find_period(new_array):
-    time = new_array[:0]
+    time = new_array[:,0]
     y = new_array[:,1]
     y_filt = sig.medfilt(y)
-    y_filt_pks = sig.find_peaks(y_filt)
-    plt.plot(time, y, 'r-')#, time[y_filt_pks], y_filt[y_filt_pks], 'b.')
+    y_filt_pks, _ = sig.find_peaks(y_filt)
+    plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
     plt.title('Period of pendulum')
     plt.show()
-
+    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
 
 
 
