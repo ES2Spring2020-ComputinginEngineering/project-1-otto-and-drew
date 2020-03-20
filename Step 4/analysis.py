@@ -4,6 +4,7 @@ import os
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.signal as sig
 
 #path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
 path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
@@ -80,8 +81,32 @@ def theta_graph(new_array):
     plt.ylabel('Theta')
     plt.title('Theta vs. Time')
     plt.show()
-    
-theta_graph(m)
-theta_graph(n)
-theta_graph(o)
-theta_graph(p)
+
+def find_period(new_array):
+    time = new_array[:0]
+    y = new_array[:,1]
+    y_filt = sig.medfilt(y)
+    y_filt_pks = sig.find_peaks(y_filt)
+    plt.plot(time, y, 'r-')#, time[y_filt_pks], y_filt[y_filt_pks], 'b.')
+    plt.title('Period of pendulum')
+    plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
