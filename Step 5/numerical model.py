@@ -18,10 +18,10 @@ def equations(initial_vector, time):
     
     return functions
 
-def plot_model(time, position):
+def plot_position(time, position):
    
     plt.plot(time, position[:,0])
-    plt.title("Pendulum Model")
+    plt.title("Pendulum Position vs. Time")
     plt.xlabel("Time (s)")
     plt.ylabel("Position")
     plt.grid(True)
@@ -29,34 +29,4 @@ def plot_model(time, position):
 
 position = odeint(equations, [initial_theta, initial_velocity], time)
 
-plot_model(time, position)
-
-"""def update_system(pos,vel, acc):
-    
-    dt = 0.1
-    pos_next = 
-    vel_next = 
-    acc_next = 
-    
-    return pos_next, vel_next, acc_next
-
-pos = [60]
-vel = [0]
-acc = [0]
-time = np.arange(0, 20, 0.1)
-values = []
-i = 1
-    while i < len(time):
-    
-        pos_next, vel_next, acc_next = update_system(pos[i], vel[i], acc[i])
-        time_next = time(i)
-    
-        pos.append(pos_next)
-        vel.append(vel_next)
-        acc.append(acc_next)
-        values.append(time_next, pos_next, vel_next, acc_next)
-
-    array = np.array(values)"""
-
-    
-    
+plot_position(time, position)
