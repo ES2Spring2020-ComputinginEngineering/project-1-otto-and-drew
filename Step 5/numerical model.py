@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.signal as sig
 
 g = 9.81
-L = 13.5
+L = [5.5, 7.5, 9.5, 11.5, 13.5]
 pos = [0]
 vel = [0]
 acc = [0,1,2,3,4,4,2,2,1,0,0,0,0,-1,-1,-2,-2,-2,-3,-4,-4]
 time = np.linspace(0,20,21)
-theta = np.radians(60)
+theta = np.radians(110)
 
 def update_system(acc,pos,vel,time1,time2):
     # position and velocity update below
     dt = time2-time1
     posNext = pos+vel*dt
-    velNext = vel+(g/L)*np.sin(theta)*dt
+    velNext = vel+(g/L[4])*np.sin(theta)*dt
     return posNext,velNext
 
 def print_system(time,pos,vel):
@@ -62,6 +63,24 @@ plt.grid()
 plt.tight_layout()
 plt.show()
 
+def find_period(new_array):
+    time = new_array[:,0]
+    y = new_array[:,1]
+    y_filt = sig.medfilt(y)
+    y_filt_pks, _ = sig.find_peaks(y_filt)
+    plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
+    plt.title('Period of pendulum')
+    plt.show()
+    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
+    
+    
+p = [1.5, 1.75, 1.97, 2.17, 2.35]
+
+plt.plot(L, p, 'r--')
+plt.xlabel('Length in m')
+plt.ylabel('Period in s')
+plt.title('Length vs Period')
+plt.show()
 
 
 
@@ -79,37 +98,3 @@ plt.show()
 
 
 
-
-
-
-
-
-
-# =============================================================================
-# g = 9.81
-# l = 0.50
-# time = np.arange(0, 10, 0.010)
-# initial_position = 60.0
-# initial_theta = np.radians(initial_position)
-# initial_velocity = np.radians(0)
-# 
-# def equations(initial_vector, time):
-#     
-#     theta, velocity = initial_vector
-#     functions = [velocity, -(g/l) * sin(theta)]
-#     
-#     return functions
-# 
-# def plot_position(time, position):
-#    
-#     plt.plot(time, position[:,0])
-#     plt.title("Pendulum Position vs. Time")
-#     plt.xlabel("Time (s)")
-#     plt.ylabel("Position")
-#     plt.grid(True)
-#     plt.show() 
-# 
-# position = odeint(equations, [initial_theta, initial_velocity], time)
-# 
-# plot_position(time, position)
-# =============================================================================
