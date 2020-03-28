@@ -4,7 +4,7 @@ import numpy as np
 import scipy.signal as sig
 
 g = 9.81
-L = [5.5, 7.5, 9.5, 11.5, 13.5]
+L = [.14, .19, .24, .29, .34]
 pos = [0]
 vel = [0]
 acc = [0,1,2,3,4,4,2,2,1,0,0,0,0,-1,-1,-2,-2,-2,-3,-4,-4]
@@ -39,7 +39,7 @@ plt.plot(time, pos, 'ro--')
 
 plt.xlabel('Time (seconds)')
 plt.ylabel('Position (m)')
-plt.title('Position vs Time')
+plt.title('Position vs Time .34 meters at 110 deg')
 plt.xlim((0, 20)) # set x range to -1 to 8
 plt.grid()
 
@@ -74,7 +74,7 @@ def find_period(new_array):
     print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
     
     
-p = [1.5, 1.75, 1.97, 2.17, 2.35]
+p = [.24, .28, .31, .34, .37]
 
 plt.plot(L, p, 'r--')
 plt.xlabel('Length in m')
