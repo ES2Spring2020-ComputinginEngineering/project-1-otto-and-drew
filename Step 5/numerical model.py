@@ -8,7 +8,7 @@ pos = [0]
 vel = [0]
 acc = [0,1,2,3,4,4,2,2,1,0,0,0,0,-1,-1,-2,-2,-2,-3,-4,-4]
 time = np.linspace(0,20,21)
-
+theta = np.radians(60)
 
 def update_system(acc,pos,vel,time1,time2):
     # position and velocity update below
