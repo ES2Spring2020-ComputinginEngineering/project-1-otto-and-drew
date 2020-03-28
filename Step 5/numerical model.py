@@ -18,11 +18,15 @@ def update_system(acc,pos,vel,time1,time2):
     velNext = vel+(g/L[4])*np.sin(theta)*dt
     return posNext,velNext
 
-def print_system(time,pos,vel):
-    print("TIME:     ", time)
-    print("POSITION: ", pos)
-    print("VELOCITY: ", vel, "\n")
-
+def find_period(new_array):
+    time = new_array[:,0]
+    y = new_array[:,1]
+    y_filt = sig.medfilt(y)
+    y_filt_pks, _ = sig.find_peaks(y_filt)
+    plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
+    plt.title('Period of pendulum')
+    plt.show()
+    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
 
 i = 1
 while i < len(time):
@@ -36,7 +40,6 @@ while i < len(time):
 
 plt.subplot(3,1,1)
 plt.plot(time, pos, 'ro--') 
-
 plt.xlabel('Time (seconds)')
 plt.ylabel('Position (m)')
 plt.title('Position vs Time .34 meters at 110 deg')
@@ -62,17 +65,6 @@ plt.xlim((0, 20)) # set x range to -1 to 8
 plt.grid()
 plt.tight_layout()
 plt.show()
-
-def find_period(new_array):
-    time = new_array[:,0]
-    y = new_array[:,1]
-    y_filt = sig.medfilt(y)
-    y_filt_pks, _ = sig.find_peaks(y_filt)
-    plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
-    plt.title('Period of pendulum')
-    plt.show()
-    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
-    
     
 p = [.24, .28, .31, .34, .37]
 
