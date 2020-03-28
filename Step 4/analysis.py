@@ -6,8 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as sig
 
-path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
-#path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
+#path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
 os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
@@ -16,9 +16,9 @@ fin3 = open("receiver_data3.txt", "r")
 fin4 = open("receiver_data4.txt", "r")
 fin5 = open("receiver_data5.txt", "r")
 
-def create_array("name"):
+def create_array(name):
     
-    fin = open("name", "r")
+    fin = open(name, "r")
     outname = "new" + name
     fout = open(outname, "w")
     for line in fin:
@@ -45,7 +45,7 @@ def acc_array(array):
     plt.plot(t, x, 'r--', t, y, 'bs', t, z, 'g^')
     plt.xlabel('Time')
     plt.ylabel('Accelerations')
-    plt.title('Acceleration vs Time')
+    plt.title('Acceleration vs Time 7.5 inches')
     plt.legend(('X values', 'Y values', 'Z values'))
     plt.show()
 
@@ -79,7 +79,7 @@ def theta_graph(new_array):
     plt.plot(ti, th, 'b.')
     plt.xlabel('Time')
     plt.ylabel('Theta')
-    plt.title('Theta vs. Time')
+    plt.title('Theta vs. Time 13.5 inches')
     plt.show()
 
 def find_period(new_array):
@@ -88,12 +88,10 @@ def find_period(new_array):
     y_filt = sig.medfilt(y)
     y_filt_pks, _ = sig.find_peaks(y_filt)
     plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
-    plt.title('Period of pendulum')
+    plt.title('Period of pendulum 9.5 inches')
     plt.show()
     print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
 
-
-create_array(fin1)
 
 
 
