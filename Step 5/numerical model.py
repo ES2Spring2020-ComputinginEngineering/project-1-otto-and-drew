@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.signal as sig
+import math
 
 g = 9.81
 L = [.14, .19, .24, .29, .34]
@@ -18,16 +19,13 @@ def update_system(acc,pos,vel,time1,time2):
     velNext = vel+(g/L[4])*np.sin(theta)*dt
     return posNext,velNext
 
-def find_period(new_array):
-    time = new_array[:,0]
-    y = new_array[:,1]
-    y_filt = sig.medfilt(y)
-    y_filt_pks, _ = sig.find_peaks(y_filt)
-    plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
-    plt.title('Period of pendulum')
-    plt.show()
-    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
-
+def find_period(length):
+    s = (length/g)
+    y = math.sqrt(s)
+    x = 2 * math.pi
+    print(y * x)
+    
+   
 i = 1
 while i < len(time):
     # update position and velocity using previous values and time step
