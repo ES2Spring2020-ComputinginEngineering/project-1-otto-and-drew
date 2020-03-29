@@ -18,9 +18,10 @@ def period(a):
 def theoretical_graph():
    
     p = period(arr1d)
-    plt.plot(length, p, "bo")
+    plt.plot(length, p, "bo-")
     plt.ylabel("Period (s)")
     plt.xlabel("Length (m)")
+    plt.grid(True)
     plt.title(" Theoretical Correlation of Pendulum Length vs. Period")
     plt.axis(0, .5, 0, 1.5)
     plt.show()

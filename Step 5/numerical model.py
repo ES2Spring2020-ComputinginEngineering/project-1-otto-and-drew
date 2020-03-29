@@ -67,11 +67,13 @@ plt.tight_layout()
 plt.show()
     
 p = [.24, .28, .31, .34, .37]
+#these values were obtained by running the function find_period
 
-plt.plot(L, p, 'r--')
-plt.xlabel('Length in m')
-plt.ylabel('Period in s')
-plt.title('Length vs Period')
+plt.plot(L, p, 'bo-')
+plt.xlabel('Length (m)')
+plt.ylabel('Period (s)')
+plt.grid(True)
+plt.title('Numerical Correlation of Pendulum Length vs. Period')
 plt.show()
 
 
