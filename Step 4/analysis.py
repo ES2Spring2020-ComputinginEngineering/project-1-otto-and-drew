@@ -90,13 +90,13 @@ def find_period(new_array):
     plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
     plt.title('Period of pendulum 13.5 inches')
     plt.show()
-    print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
+    print(y_filt[y_filt_pks])
 
 
-p = [.64, .67, 1.21, 1.33, 1.66]
+p = [.64, .67, .71, .73, .75]
 L = [0.14, 0.191, 0.241, 0.292, 0.343]
 
-plt.plot(L, p, "bo-")
+plt.plot(L, p, "bo-", L, p, 'r.')
 plt.xlabel('Length (m)')
 plt.ylabel('Period (s)')
 plt.title('Real-World Correlation of Pendulum Length vs. Period')
