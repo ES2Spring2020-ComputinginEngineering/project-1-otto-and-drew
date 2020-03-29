@@ -1,15 +1,11 @@
-##################
-# Drew and Otto
-# Time: 2 hr
-# We worked alone on this project
-#################
+""" Step 3 Data Logger Code """
 
 import microbit as mb
 import radio  # Needs to be imported separately
 
-# Change the channel if other microbits are interfering. (Default=7)
 radio.on()  # Turn on radio
 radio.config(channel=12, length=100)
+# Change the channel if other microbits are interfering. (Default=7)
 
 print('Program Started')
 mb.display.show(mb.Image.HAPPY)
@@ -35,7 +31,5 @@ while not mb.button_a.is_pressed():
     message = str(time)+", " + str(x)+ ", " +str(y)+", " +str(z)
     radio.send(message)
     mb.sleep(10)
-
-
 
 mb.display.show(mb.Image.SQUARE)  # Display Square when program ends
