@@ -96,7 +96,7 @@ def find_period(new_array):
 p = [.64, .67, .71, .73, .75]
 L = [0.14, 0.191, 0.241, 0.292, 0.343]
 
-plt.plot(L, p, "bo-", L, p, 'r.')
+plt.plot(L, p, "bo-")
 plt.xlabel('Length (m)')
 plt.ylabel('Period (s)')
 plt.title('Real-World Correlation of Pendulum Length vs. Period')
