@@ -11,11 +11,15 @@ import matplotlib.pyplot as plt
 length = [.140, .191, .241, .292, .343]
 arr1d = np.array(length)
 
-def period(a):
-    t = (a/9.8)**.5
+def period(L):
+# This function takes the parameter L (length of pendulum) and
+# converts it into the theoretical period of the pendulum
+    t = (L/9.8)**.5
     return t
 
 def theoretical_graph():
+# This function runs the function "period" and graphs the correlation
+# between the pendulum length and the period
    
     p = period(arr1d)
     plt.plot(length, p, "bo-")
