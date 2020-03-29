@@ -118,24 +118,3 @@ plt.ylabel('Period (s)')
 plt.title('Real-World Correlation of Pendulum Length vs. Period')
 plt.grid(True)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
