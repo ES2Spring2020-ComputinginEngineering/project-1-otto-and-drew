@@ -6,8 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as sig
 
-#path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
-path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
+path = "/Users/ottolaakso/Desktop/Tufts Classes/ES2/GitHub/project-1-otto-and-drew/Step 3"
+#path = "c:/Users/drewh/Documents/GitHub/project-1-otto-and-drew/Step 3"
 os.chdir(path)
 
 fin1 = open("receiver_data1.txt", "r")
@@ -94,12 +94,13 @@ def find_period(new_array):
 
 
 p = [.64, .67, 1.21, 1.33, 1.66]
-L = [5.5, 7.5, 9.5, 11.5, 13.5]
+L = [0.14, 0.191, 0.241, 0.292, 0.343]
 
-plt.plot(L, p, 'r--', L, p, 'b.')
-plt.xlabel('Length in in')
-plt.ylabel('Period in s')
-plt.title('Length vs Period Real-World')
+plt.plot(L, p, "bo-")
+plt.xlabel('Length (m)')
+plt.ylabel('Period (s)')
+plt.title('Real-World Correlation of Pendulum Length vs. Period')
+plt.grid(True)
 plt.show()
 
 
