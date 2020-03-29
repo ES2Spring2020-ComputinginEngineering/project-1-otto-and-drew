@@ -88,14 +88,19 @@ def find_period(new_array):
     y_filt = sig.medfilt(y)
     y_filt_pks, _ = sig.find_peaks(y_filt)
     plt.plot(time, y, 'r-', time[y_filt_pks], y_filt[y_filt_pks], 'b.')
-    plt.title('Period of pendulum 9.5 inches')
+    plt.title('Period of pendulum 13.5 inches')
     plt.show()
     print(y_filt[y_filt_pks][7]-y_filt[y_filt_pks][8])
 
 
+p = [.64, .67, 1.21, 1.33, 1.66]
+L = [5.5, 7.5, 9.5, 11.5, 13.5]
 
-
-
+plt.plot(L, p, 'r--', L, p, 'b.')
+plt.xlabel('Length in in')
+plt.ylabel('Period in s')
+plt.title('Length vs Period Real-World')
+plt.show()
 
 
 
