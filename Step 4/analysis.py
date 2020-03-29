@@ -1,4 +1,4 @@
-# Step 4: Analysis of Results
+""" Step 4 Analysis Code """
 
 import os
 import math
@@ -15,10 +15,11 @@ fin2 = open("receiver_data2.txt", "r")
 fin3 = open("receiver_data3.txt", "r")
 fin4 = open("receiver_data4.txt", "r")
 fin5 = open("receiver_data5.txt", "r")
-#These files are our paths for the data which allows us to access them
+#These variables represent the data files for each of the five pendulum lengths
 
 def create_array(name):
-#create_array takes the data collected and turns it into an array
+# Takes the name of a data file and turns the file into an array
+# Returns the array
     
     fin = open(name, "r")
     outname = "new" + name
@@ -33,15 +34,10 @@ def create_array(name):
     array = np.loadtxt(outname, delimiter=",", dtype=float)
     return array
 
-s = create_array("receiver_data1.txt")
-p = create_array("receiver_data2.txt")
-q = create_array("receiver_data3.txt")
-r = create_array("receiver_data4.txt")
-t = create_array("receiver_data5.txt")
-#These variables will simplify the plotting process and makes things easier for us
-
 def acc_array(array):
-#acc_array creates a graph that displays the position, velocity, and acceleration when compared to time
+# Takes an array of position, velocity, and acceleration and graphs them in relation to time
+# Void function
+    
     t = array[:,0]
     x = array[:,1]
     y = array[:,2]
@@ -49,14 +45,14 @@ def acc_array(array):
     plt.plot(t, x, 'r--', t, y, 'bs', t, z, 'g^')
     plt.xlabel('Time')
     plt.ylabel('Accelerations')
-    plt.title('Acceleration vs Time 7.5 inches')
+    plt.title('Acceleration vs Time')
     plt.legend(('X values', 'Y values', 'Z values'))
     plt.show()
 
-
 def theta_array(array):
-#theta_array creates a new array that contains time and the angle as the pendulum swings, 
-#the for loop goes through and adds the values for each line in the array
+# Takes an array of position, velocity, acceleration, and time values and
+# creates a new array that contains the angle of the pendulum with a corresponding time value. 
+# Returns the new array with theta and time.
      
     new_list = []
     time = array[0:,0]
@@ -73,25 +69,23 @@ def theta_array(array):
     new_array = np.array(new_list)
     return new_array
 
-l = theta_array(s)
-m = theta_array(p)
-n = theta_array(q)
-o = theta_array(r)
-p = theta_array(t)
-#these variables will make it easier for us to create the graph and find the period while saving us some time
-
 def theta_graph(new_array):
-#theta_graph creates a graph that plots the time against the changing angle values
+# Takes an array with angle and time values as a parameter and turns them into a graph
+# Void function
+    
     ti = new_array[:,0]
     th = new_array[:,1]
     plt.plot(ti, th, 'b.')
     plt.xlabel('Time')
     plt.ylabel('Theta')
-    plt.title('Theta vs. Time 13.5 inches')
+    plt.title('Theta vs. Time')
     plt.show()
 
 def find_period(new_array):
- #find_period takes the theta graph and calculates the period based on the peaks
+ # Takes an array of time and pendulum angle values as a parameter. Calculates the period
+ # and graphs period vs. time
+ # Void function
+ 
     time = new_array[:,0]
     y = new_array[:,1]
     y_filt = sig.medfilt(y)
@@ -101,6 +95,19 @@ def find_period(new_array):
     plt.show()
     print(y_filt[y_filt_pks])
 
+s = create_array("receiver_data1.txt")
+p = create_array("receiver_data2.txt")
+q = create_array("receiver_data3.txt")
+r = create_array("receiver_data4.txt")
+t = create_array("receiver_data5.txt")
+#These variables will simplify the plotting process
+
+l = theta_array(s)
+m = theta_array(p)
+n = theta_array(q)
+o = theta_array(r)
+p = theta_array(t)
+#these variables will make it easier ti create the graph and find the period
 
 p = [.64, .67, .71, .73, .75]
 L = [0.14, 0.191, 0.241, 0.292, 0.343]
