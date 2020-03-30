@@ -19,7 +19,7 @@ fin5 = open("receiver_data5.txt", "r")
 
 def create_array(name):
 # Takes the name of a data file as a parameter and turns the contents of 
- # the file into an array
+# the file into an array
 # Returns the array
     
     fin = open(name, "r")

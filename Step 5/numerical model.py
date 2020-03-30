@@ -8,17 +8,15 @@ import scipy.signal as sig
 g = 9.81
 L = [.14, .19, .24, .29, .34]
 
-
-
 def update_system(pos,vel,time1,time2, length):
-    # position and velocity update below
+# Takes position, velocity, time1, time2, and length values as parameters
+# Calculates and returns next values for  position, velocity, and acceleration
+
     dt = time2-time1
     accNext = (g/length)*np.sin(pos)
     velNext = vel+(accNext*dt)
     posNext = pos+(velNext*dt)
     return posNext,velNext, accNext
-
-
 
 def pen_sim(length, start_angle):
     if start_angle < 90:
@@ -37,7 +35,6 @@ def pen_sim(length, start_angle):
         acc.append(accNext)
         i += 1
 
-
     plt.subplot(3,1,1)
     plt.plot(time, pos, 'r--') 
     plt.xlabel('Time (seconds)')
@@ -46,7 +43,6 @@ def pen_sim(length, start_angle):
     plt.xlim((0, 20)) # set x range to -1 to 8
     plt.grid()
 
-
     plt.subplot(3,1,2)
     plt.plot(time, vel, 'r--') 
     plt.xlabel('Time (seconds)')
@@ -54,7 +50,6 @@ def pen_sim(length, start_angle):
     plt.title('Velocity vs Time')
     plt.xlim((0, 20)) # set x range to -1 to 8
     plt.grid()
-
 
     plt.subplot(3,1,3)
     plt.plot(time, acc, 'r--') 
@@ -82,8 +77,6 @@ pen_sim(.24, 120)
 pen_sim(.29, 120) 
 pen_sim(.34, 120) 
 
-
-
 p = [1.0, 1.2,  1.299, 1.5, 1.6]
 #these values were obtained by running the function pen_sim
 
@@ -93,20 +86,3 @@ plt.ylabel('Period (s)')
 plt.grid(True)
 plt.title('Numerical Correlation of Pendulum Length vs. Period at 60 deg')
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
