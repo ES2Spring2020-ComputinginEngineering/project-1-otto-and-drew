@@ -18,7 +18,8 @@ fin5 = open("receiver_data5.txt", "r")
 #These variables represent the data files for each of the five pendulum lengths
 
 def create_array(name):
-# Takes the name of a data file and turns the file into an array
+# Takes the name of a data file as a parameter and turns the contents of 
+ # the file into an array
 # Returns the array
     
     fin = open(name, "r")
@@ -35,7 +36,8 @@ def create_array(name):
     return array
 
 def acc_array(array):
-# Takes an array of position, velocity, and acceleration and graphs them in relation to time
+# Takes an array of time and x, y, and z acceleration values
+# Graphs the x, y, and z acceleration values in relation to time
 # Void function
     
     t = array[:,0]
@@ -50,8 +52,8 @@ def acc_array(array):
     plt.show()
 
 def theta_array(array):
-# Takes an array of position, velocity, acceleration, and time values and
-# creates a new array that contains the angle of the pendulum with a corresponding time value. 
+# Takes an array of time and x, y, and z acceleration values
+# creates a new array containing the angle of the pendulum at each time value.
 # Returns the new array with theta and time.
      
     new_list = []
@@ -70,7 +72,7 @@ def theta_array(array):
     return new_array
 
 def theta_graph(new_array):
-# Takes an array with angle and time values as a parameter and turns them into a graph
+# Takes an array with angle and time values as a parameter and graphs them
 # Void function
     
     ti = new_array[:,0]
@@ -82,8 +84,8 @@ def theta_graph(new_array):
     plt.show()
 
 def find_period(new_array):
- # Takes an array of time and pendulum angle values as a parameter. Calculates the period
- # and graphs period vs. time
+ # Takes an array of time and pendulum angle values as a parameter
+ # Calculates the period and graphs period vs. time
  # Void function
  
     time = new_array[:,0]
