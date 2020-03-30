@@ -1,4 +1,5 @@
 """ Step 2 Theoretical Model Code """
+""" Otto Laakso & Drew Hollett """
 
 import math
 import numpy as np
