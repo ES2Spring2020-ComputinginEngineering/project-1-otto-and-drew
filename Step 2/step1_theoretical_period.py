@@ -1,5 +1,6 @@
 """ Step 2 Theoretical Model Code """
 
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,7 +9,7 @@ def period(L):
 # converts it into the theoretical period of the pendulum
 # Void function
     
-    t = (L/9.8)**.5
+    t = 2*math.pi*(L/9.8)**.5
     return t
 
 def theoretical_graph(length):
