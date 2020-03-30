@@ -1,4 +1,4 @@
-""" Step 2 Code """
+""" Step 2 Theoretical Model Code """
 
 import numpy as np
 import matplotlib.pyplot as plt
