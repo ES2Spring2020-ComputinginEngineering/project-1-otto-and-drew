@@ -1,20 +1,9 @@
 # Project1
-Project 1 Starter Code
 
 Names: Otto Laakso & Drew Hollett
 Team Name: 12
 
-Your primary tasks will be to:
+The goal of this project was to create code that took data from a physically created pendulum using the microbit. The next step was to create a theoretical model for a pendulum to predict the outcomes. The next step was about taking the data we collected and creating graphs that plotted, time, acceleration, velocity, position, the angle, and then calculated the period. The last step involved using numerical methods to create a model that would show what a pendulum looks like in a perfect world.
 
-- build a pendulum,
-- use theoretical equations (from physics) to calculate the period of the pendulum,
-- collect real-world experimental data from your pendulum,
-- create a computer simulation of your pendulum numerically,
-- plot and extract meaningful results 2 through 4
-
-Your final submission should include (on GitHub):
-
-All of your updated Python files
-A README.md file explaining what .py files to run to get your results
-A .pdf file containing your final plots and a brief report and discussion of results
-At least five micro:bit data files from a pendulum for testing your parsing code.
+How to use our code:
+There is nothing required for step 1 or 2, unless you decide to take more data, which should not be necessary. To use step 3,
