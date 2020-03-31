@@ -1,20 +1,11 @@
 # Project1
-Project 1 Starter Code
 
 Names: Otto Laakso & Drew Hollett
 Team Name: 12
 
-Your primary tasks will be to:
+The goal of this project was to create code that took data from a physically created pendulum using the microbit. The next step was to create a theoretical model for a pendulum to predict the outcomes. The next step was about taking the data we collected and creating graphs that plotted, time, acceleration, velocity, position, the angle, and then calculated the period. The last step involved using numerical methods to create a model that would show what a pendulum looks like in a perfect world.
 
-- build a pendulum,
-- use theoretical equations (from physics) to calculate the period of the pendulum,
-- collect real-world experimental data from your pendulum,
-- create a computer simulation of your pendulum numerically,
-- plot and extract meaningful results 2 through 4
-
-Your final submission should include (on GitHub):
-
-All of your updated Python files
-A README.md file explaining what .py files to run to get your results
-A .pdf file containing your final plots and a brief report and discussion of results
-At least five micro:bit data files from a pendulum for testing your parsing code.
+How to use our code:
+There is nothing required for step 1, 2 or 3 unless you decide to take extra data, which should not be necessary. 
+To use step 4, you must first change the path to work with your os, our paths can be used as guides to do so. Operating the create_array function will use "receiver_data1.txt", "receiver_data2.txt", "receiver_data3.txt", "receiver_data4.txt", "receiver_data5.txt" which creates 5 new arrays the contain the time, x, y, z values that were obtained from the microbit. These arrays will be useful to us as we go on. To operate the acc_array(array) function you have to use create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt") or use the global variables s, p, q, r, and t as the parameters. Next you need to create the angle arrays with the function theta_array(array) by using create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt"), create_array("receiver_data1.txt") or use the global variables s, p, q, r, and t as the parameters. This will create a theta array for use in later functions. To use both theta_graph(new_array) and find_period(new_array), the functions theta_array(create_array("receiver_data1.txt")), theta_array(create_array("receiver_data2.txt")), theta_array(create_array("receiver_data3.txt")), theta_array(create_array("receiver_data4.txt")), theta_array(create_array("receiver_data5.txt")) as the parameters. All the graphs will be created and the periods found. The period will then be plotted.
+For step 5, the function pen_sim(length, start_angle) will need to be run through 5 different lengths of .14, .19, .24, .29, .34 or use L[0], L[1], L[2], L[3], L[4]. The start angles should either 60 or 120 which are the degrees used for theta. This function should be run 10 times with 2 degrees for every length. The period will then be plotted and graphed.
