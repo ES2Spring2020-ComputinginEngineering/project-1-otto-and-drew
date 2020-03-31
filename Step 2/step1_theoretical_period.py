@@ -35,6 +35,7 @@ theoretical_graph(length_array)
 
 """The limits of this model:
 The theoretical evaluation of the pendulum period given its length assumes
-that friction and air resistance are negligible and do not affect the motion of the 
-pendulum. Additionally, the theoretical model assumes that the pendulum swings in a 
-perfect trajectory, whereas in reality, its motion is directed in multiple directions."""
+that friction and air resistance are negligible and do not affect the motion of 
+the pendulum, and that the "string" of the pendulum is massless. Additionally, 
+the theoretical model assumes that the pendulum swings in a perfect trajectory, 
+whereas in reality, its motion is directed in multiple directions."""
